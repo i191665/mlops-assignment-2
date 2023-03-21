@@ -1,0 +1,21 @@
+{% extends 'layout.html' %} {% block title %}Home{% endblock %} {% block content
+%}
+<div class="container">
+  <h1>Apple Stock Closing Prices</h1>
+  <table class="center">
+    <tr>
+      <th>Date</th>
+      {% for date in dates %}
+      <td>{{date}}</td>
+      {% endfor %}
+    </tr>
+    <tr>
+      <th>Price (USD)</th>
+      {% for price in prices %}
+      <td>${{price}}</td>
+      {% endfor %}
+    </tr>
+  </table>
+  <h2>Prediction for tomorrow: ${{'%0.2f'|format(prediction|float)}}</h2>
+</div>
+{% endblock %}

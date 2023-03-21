@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
+#navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: black;
+}
+
+#navbar a {
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  padding: 10px 20px 10px 20px;
+  text-align: center;
+}
+
+#navbar a:hover {
+  background-color: cadetblue;
+}
+
+.content {
+  margin-top: 100px;
+}
+
+.container {
+  text-align: center;
+}
+
+.center {
+  margin: auto;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+  font-size: 20px;
+}
+
+input {
+  margin: 5px;
+}
+
+input[type="text"] {
+  width: 400px;
+}

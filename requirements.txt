@@ -1,0 +1,5 @@
+Flask==2.2.3
+Flask_WTF==1.1.1
+pandas==1.5.3
+tensorflow==2.11.0
+WTForms==3.0.1

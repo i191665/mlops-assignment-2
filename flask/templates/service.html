@@ -1,0 +1,28 @@
+{% extends 'layout.html' %} {% block title %}Service{% endblock %} {% block
+content %}
+<div class="container">
+  <form action="/service" method="POST" class="center">
+    <h1>Input Data to Get Prediction and Error</h1>
+    <h3>
+      Enter 8 comma separated list of prices. First 7 are the inputs to the
+      model. 8th is the target
+    </h3>
+    {{ form.csrf_token }}
+    <div>
+      {{form.prices.label}}: {{form.prices()}} <br />
+      <input type="submit" value="Submit" />
+    </div>
+  </form>
+
+  {% if prediction is defined %}
+  <div>
+    <h3>Target: ${{'%0.2f'|format(target|float)}}</h3>
+    <h3>Prediction: ${{'%0.2f'|format(prediction|float)}}</h3>
+    <h3>Mean Absolute Error: {{'%0.2f'|format(mae|float)}}</h3>
+  </div>
+  {% elif error is defined %}
+  <div>
+    <h3>{{error}}</h3>
+  </div>
+</div>
+{% endif %} {% endblock %}
