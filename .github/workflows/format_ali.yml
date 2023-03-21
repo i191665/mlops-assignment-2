@@ -1,0 +1,29 @@
+name: Format Using Black
+
+on:
+  push:
+    branches: [ ali ]
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9' 
+        
+      - name: Format code with black
+        run: |
+          pip install black
+          black .
+          
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+
